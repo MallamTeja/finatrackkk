@@ -1,0 +1,95 @@
+ /* Shared Styles for All Pages */
+:root {
+    --primary: #3B82F6; /* blue-500 */
+    --primary-hover: #2563EB; /* blue-600 */
+    --secondary: #3f37c9;
+    --success: #10B981; /* emerald-500 */
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #3b82f6;
+    --text: #111827; /* gray-900 */
+    --text-secondary: #6B7280; /* gray-500 */
+    --input-bg: #FFFFFF; /* white */
+    --input-border: #E5E7EB; /* gray-200 */
+    --card-bg: #FFFFFF; /* white */
+    --bg: #F3F4F6; /* light gray */
+    --border: #E5E7EB; /* gray-200 */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --primary: #2563EB; /* blue-600 */
+    --primary-hover: #1D4ED8;
+    --secondary: #6c8eff;
+    --success: #34D399; /* emerald-400 */
+    --danger: #f87171;
+    --warning: #fbbf24;
+    --info: #60a5fa;
+    --text: #F9FAFB; /* gray-100 */
+    --text-secondary: #D1D5DB; /* gray-300 */
+    --input-bg: #1F2937; /* gray-800 */
+    --input-border: #374151; /* gray-700 */
+    --card-bg: #1F2937; /* gray-800 */
+    --bg: #111827; /* very dark gray/black */
+    --border: #374151; /* gray-700 */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Base Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: var(--transition);
+}
+
+.sidebar {
+    width: 280px;
+    padding: 2rem 1.5rem;
+    background: var(--card-bg);
+    box-shadow: var(--shadow-lg);
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+.main-content-wrapper {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+}
+
+.main-content {
+    padding: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+    .main-content-wrapper {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+}

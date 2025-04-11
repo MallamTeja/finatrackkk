@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goals | FinTrack</title>
+    <link rel="stylesheet" href="new-shared-styles.css">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">FinTrack</div>
+            <ul class="nav-links">
+                <li><a href="mainpage.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="add-transaction.html"><i class="fas fa-plus-circle"></i> Add Transaction</a></li>
+                <li><a href="insights.html"><i class="fas fa-chart-pie"></i> Insights</a></li>
+                <li class="active"><a href="savings-goals.html"><i class="fas fa-bullseye"></i> Savings Goals</a></li>
+                <li><a href="budget-limits.html"><i class="fas fa-wallet"></i> Budget Limits</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="theme-options">
+                    <button class="theme-btn light" aria-label="Light theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="theme-btn dark" aria-label="Dark theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="User Profile">
+                    <span>John Doe</span>
+                </div>
+            </header>
+
+            <!-- Savings Goals Content -->
+            <section class="card">
+                <h2>Your Savings Goals</h2>
+                <div class="savings-container">
+                    <div class="goal-card">
+                        <h3>Vacation Fund</h3>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <p>Goal: $2000 | Saved: $1200</p>
+                    </div>
+                    <div class="goal-card">
+                        <h3>New Car</h3>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%;"></div>
+                            </div>
+                        </div>
+                        <p>Goal: $15000 | Saved: $4500</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
