@@ -267,7 +267,17 @@
                 submitButton.textContent = 'Logging in...';
                 submitButton.setAttribute('aria-busy', 'true');
                 
-                const response = await fetch('http://localhost:5000/api/auth/login', {
+                const response = await fetch('/api/auth/login', {
+=======
+                const response = await fetch('/api/auth/login', {
+>>>>>>> bf4910498fcec98156456a57039d985c9b16fbf6
+=======
+                const response = await fetch('/api/auth/login', {
+=======
+                const response = await fetch('/api/auth/login', {
+=======
+                const response = await fetch('/api/auth/login', {
+>>>>>>> bf4910498fcec98156456a57039d985c9b16fbf6
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
