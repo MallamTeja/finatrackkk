@@ -1,64 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights | FinTrack</title>
-    <link rel="stylesheet" href="new-shared-styles.css">
-    <link rel="stylesheet" href="enhanced-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insights | FinTrack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <style>
+    .fade-in {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-<body>
-    <div class="dashboard-container">
-        <!-- Sidebar Navigation -->
-        <nav class="sidebar">
-            <div class="logo">FinTrack</div>
-            <ul class="nav-links">
-                <li><a href="mainpage.html"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="add-transaction.html"><i class="fas fa-plus-circle"></i> Add Transaction</a></li>
-                <li class="active"><a href="insights.html"><i class="fas fa-chart-pie"></i> Insights</a></li>
-                <li><a href="savings-goals.html"><i class="fas fa-bullseye"></i> Savings Goals</a></li>
-                <li><a href="budget-limits.html"><i class="fas fa-wallet"></i> Budget Limits</a></li>
-                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
-            </ul>
-        </nav>
+<body class="flex h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all duration-300">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white dark:bg-gray-800 shadow-md px-4 py-6 flex flex-col justify-between">
+    <div>
+      <h2 class="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400">FinTrack</h2>
+      <nav class="space-y-2">
+        <a href="mainpage.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Dashboard</a>
+        <a href="add-transaction.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Add Transaction</a>
+        <a href="budget-limits.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Budget Limits</a>
+        <a href="savings-goals.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Savings Goals</a>
+        <a href="insights.html" class="block px-4 py-2 rounded-md bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-white font-medium transition">Insights</a>
+        <a href="settings.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Settings</a>
+      </nav>
+    </div>
+    <div>
+      <button onclick="toggleTheme()" class="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+        Toggle Theme
+      </button>
+    </div>
+  </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Top Bar -->
-            <header class="top-bar">
-                <div class="theme-options">
-                    <button class="theme-btn light" aria-label="Light theme">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                    <button class="theme-btn dark" aria-label="Dark theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-                <div class="user-profile">
-                    <img src="https://via.placeholder.com/40" alt="User Profile">
-                    <span>John Doe</span>
-                </div>
-            </header>
+  <!-- Main Content -->
+  <main class="flex-1 p-10 overflow-auto fade-in">
+    <h1 class="text-3xl font-semibold mb-6 text-blue-700 dark:text-blue-300">Your Financial Insights</h1>
 
-            <!-- Insights Content -->
-            <section class="card">
-                <h2>Spending Analysis</h2>
-                <div class="chart-container">
-                    <canvas id="spendingChart"></canvas>
-                </div>
-            </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Insight Card 1 -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow transition hover:shadow-lg">
+        <h2 class="text-xl font-bold mb-2 text-blue-600 dark:text-blue-400">Total Monthly Expenses</h2>
+        <p class="text-lg font-medium">₹ 27,500</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Compared to ₹30,000 last month</p>
+      </div>
 
-            <section class="card">
-                <h2>Income vs Expenses</h2>
-                <div class="chart-container">
-                    <canvas id="incomeExpenseChart"></canvas>
-                </div>
-            </section>
-        </main>
+      <!-- Insight Card 2 -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow transition hover:shadow-lg">
+        <h2 class="text-xl font-bold mb-2 text-blue-600 dark:text-blue-400">Top Spending Category</h2>
+        <p class="text-lg font-medium">Food - ₹9,000</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Mostly from Zomato and groceries</p>
+      </div>
+
+      <!-- Insight Card 3 -->
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow transition hover:shadow-lg">
+        <h2 class="text-xl font-bold mb-2 text-blue-600 dark:text-blue-400">Savings This Month</h2>
+        <p class="text-lg font-medium text-green-600 dark:text-green-400">₹ 5,200 saved</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Goal: ₹10,000</p>
+      </div>
     </div>
 
-    <script src="main.js"></script>
+    <div class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4">Insight Charts</h2>
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow text-center">
+        <p class="text-gray-500 dark:text-gray-400">[Placeholder for pie chart or bar graph]</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>

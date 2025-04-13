@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 
 // Load environment variables from parent directory
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 console.log('Environment variables loaded. MONGODB_URI exists:', !!process.env.MONGODB_URI);
 
@@ -131,7 +131,7 @@ const authMiddleware = async (req, res, next) => {
 // [Rest of the routes remain exactly the same as in the remote version...]
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     console.log(`Frontend URL: http://localhost:${PORT}`);
