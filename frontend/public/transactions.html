@@ -57,6 +57,14 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
+
+    .income {
+      color: #10b981;
+    }
+
+    .expense {
+      color: #ef4444;
+    }
   </style>
 </head>
 <body class="transition-all duration-300 flex min-h-screen">
@@ -82,13 +90,7 @@
         </svg>
         Insights
       </a>
-      <a href="budget.html" class="flex items-center gap-3 hover:underline text-lg">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        Budget Limits
-      </a>
-      <a href="savings.html" class="flex items-center gap-3 hover:underline text-lg">
+      <a href="savings-goals.html" class="flex items-center gap-3 hover:underline text-lg">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
         </svg>
@@ -126,50 +128,19 @@
 
     <!-- Transactions Content -->
     <main class="p-6 md:p-10 space-y-6">
-      <!-- Transaction Form -->
-      <div class="card p-6 max-w-sm mx-auto">
-        <h2 class="text-xl font-semibold mb-4">Add New Transaction</h2>
-        <form class="space-y-4">
-          <div class="space-y-4">
-            <div>
-              <label class="block text-sm font-medium mb-1">Date</label>
-              <input type="date" class="w-full p-2 border rounded-lg">
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Amount (₹)</label>
-              <input type="number" class="w-full p-2 border rounded-lg" placeholder="0">
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Description</label>
-              <input type="text" class="w-full p-2 border rounded-lg" placeholder="Transaction details">
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Category</label>
-              <select class="w-full p-2 border rounded-lg">
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Entertainment</option>
-                <option>Bills</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Type</label>
-              <select class="w-full p-2 border rounded-lg">
-                <option>Expense</option>
-                <option>Income</option>
-              </select>
-            </div>
-          </div>
-          <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
-            Add Transaction
-          </button>
-        </form>
-      </div>
-
       <!-- Transactions List -->
       <div class="card p-6">
-        <h2 class="text-xl font-semibold mb-4">Recent Transactions</h2>
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">All Transactions</h2>
+          <div class="flex gap-2">
+            <button class="px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition">
+              Filter
+            </button>
+            <button class="px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition">
+              Export
+            </button>
+          </div>
+        </div>
         <div class="overflow-x-auto">
           <table class="w-full">
             <thead>
@@ -177,15 +148,38 @@
                 <th class="text-left py-2">Date</th>
                 <th class="text-left py-2">Description</th>
                 <th class="text-left py-2">Category</th>
+                <th class="text-left py-2">Type</th>
                 <th class="text-right py-2">Amount</th>
               </tr>
             </thead>
             <tbody>
               <tr class="border-b hover:bg-opacity-10 hover:bg-gray-500">
-                <td class="py-3">No transactions yet</td>
-                <td></td>
-                <td></td>
-                <td class="text-right">₹0</td>
+                <td class="py-3">2023-11-15</td>
+                <td>Grocery shopping</td>
+                <td>Food</td>
+                <td class="expense">Expense</td>
+                <td class="text-right expense">₹1,250</td>
+              </tr>
+              <tr class="border-b hover:bg-opacity-10 hover:bg-gray-500">
+                <td class="py-3">2023-11-14</td>
+                <td>Salary</td>
+                <td>Income</td>
+                <td class="income">Income</td>
+                <td class="text-right income">₹45,000</td>
+              </tr>
+              <tr class="border-b hover:bg-opacity-10 hover:bg-gray-500">
+                <td class="py-3">2023-11-12</td>
+                <td>Movie tickets</td>
+                <td>Entertainment</td>
+                <td class="expense">Expense</td>
+                <td class="text-right expense">₹800</td>
+              </tr>
+              <tr class="border-b hover:bg-opacity-10 hover:bg-gray-500">
+                <td class="py-3">2023-11-10</td>
+                <td>Electricity bill</td>
+                <td>Bills</td>
+                <td class="expense">Expense</td>
+                <td class="text-right expense">₹2,100</td>
               </tr>
             </tbody>
           </table>

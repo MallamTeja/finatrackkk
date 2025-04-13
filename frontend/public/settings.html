@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,6 +11,30 @@
     }
   </script>
   <style>
+    :root {
+      --bg-light: #f5f8ff;
+      --text-light: #1f2937;
+      --card-light: #ffffff;
+      --primary-light: #3b82f6;
+      --primary-hover-light: #2563eb;
+
+      --bg-dark: #0f172a;
+      --text-dark: #f1f5f9;
+      --card-dark: #1e293b;
+      --primary-dark: #5b6ee1;
+      --primary-hover-dark: #7a8af3;
+    }
+
+    [data-theme="light"] {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    [data-theme="dark"] {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
     .fade-in {
       animation: fadeIn 0.6s ease-in-out;
     }
@@ -20,25 +44,50 @@
     }
   </style>
 </head>
-<body class="flex h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body class="flex h-screen transition-colors duration-300">
+
   <!-- Sidebar -->
-  <aside class="w-64 bg-white dark:bg-gray-800 shadow-md px-4 py-6 space-y-4 flex flex-col justify-between">
-    <div>
-      <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">FinTrack</h2>
-      <nav class="space-y-2">
-        <a href="mainpage.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Dashboard</a>
-        <a href="add-transaction.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Add Transaction</a>
-        <a href="budget-limits.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Budget Limits</a>
-        <a href="savings-goals.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Savings Goals</a>
-        <a href="insights.html" class="block px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-gray-700 transition">Insights</a>
-        <a href="settings.html" class="block px-4 py-2 rounded-md bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-white font-medium transition">Settings</a>
-      </nav>
-    </div>
-    <div>
-      <button onclick="toggleTheme()" class="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-        Toggle Theme
-      </button>
-    </div>
+  <aside class="w-64 h-screen sticky top-0 left-0 p-6 space-y-6 shadow-lg transition-all bg-opacity-90 backdrop-blur-md">
+    <h2 class="text-2xl font-bold text-blue-500">FinTrack</h2>
+    <nav class="flex flex-col gap-4 text-white">
+      <a href="mainpage.html" class="flex items-center gap-3 hover:underline text-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        Dashboard
+      </a>
+      <a href="add-transaction.html" class="flex items-center gap-3 hover:underline text-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+        </svg>
+        Add Transaction
+      </a>
+      <a href="insights.html" class="flex items-center gap-3 hover:underline text-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Insights
+      </a>
+      <a href="savings-goals.html" class="flex items-center gap-3 hover:underline text-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+        Saving Goals
+      </a>
+      <a href="budget-limits.html" class="flex items-center gap-3 hover:underline text-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        </svg>
+        Budget Limits
+      </a>
+      <a href="settings.html" class="flex items-center gap-3 hover:underline text-lg bg-blue-100 text-blue-800 font-medium">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Settings
+      </a>
+    </nav>
   </aside>
 
   <!-- Main Content -->
@@ -47,7 +96,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Theme Selection -->
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:scale-[1.02] transition">
+      <div class="card p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:scale-[1.02] transition">
         <h2 class="text-xl font-medium mb-2">Theme</h2>
         <p class="text-gray-600 dark:text-gray-300 mb-4">Select your preferred theme for the app.</p>
         <button onclick="toggleTheme()" class="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition">
@@ -56,7 +105,7 @@
       </div>
 
       <!-- Notifications Settings -->
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:scale-[1.02] transition">
+      <div class="card p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:scale-[1.02] transition">
         <h2 class="text-xl font-medium mb-2">Notifications</h2>
         <p class="text-gray-600 dark:text-gray-300 mb-4">Enable or disable notifications for your account.</p>
         <label for="notifications" class="flex items-center space-x-3">
@@ -66,7 +115,7 @@
       </div>
 
       <!-- Currency Settings -->
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:scale-[1.02] transition">
+      <div class="card p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:scale-[1.02] transition">
         <h2 class="text-xl font-medium mb-2">Currency</h2>
         <p class="text-gray-600 dark:text-gray-300 mb-4">Choose the currency for your financial transactions.</p>
         <select id="currency" class="bg-gray-100 dark:bg-gray-700 dark:text-white p-2 rounded-lg w-full">
@@ -77,7 +126,7 @@
       </div>
 
       <!-- Language Settings -->
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:scale-[1.02] transition">
+      <div class="card p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:scale-[1.02] transition">
         <h2 class="text-xl font-medium mb-2">Language</h2>
         <p class="text-gray-600 dark:text-gray-300 mb-4">Select your preferred language for the interface.</p>
         <select id="language" class="bg-gray-100 dark:bg-gray-700 dark:text-white p-2 rounded-lg w-full">

@@ -3,72 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0984e3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#2d3436" media="(prefers-color-scheme: dark)">
     <title>Register - FinTrack</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #2d3436;
-            --button-bg: #0984e3;
-            --button-hover: #0069d9;
-            --input-bg: #ffffff;
-            --input-border: #dfe6e9;
-            --error-color: #d63031;
-            --success-color: #00b894;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            min-height极抱歉，我似乎被中断了。让我继续完成这个任务。
-
-<create_file>
-<path>frontend/public/register.html</path>
-<content>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - FinTrack</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0极抱歉，我似乎被中断了。让我继续完成这个任务。
-
-<create_file>
-<path>frontend/public/register.html</path>
-<content>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - FinTrack</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #2d3436;
-            --button-bg: #0984e3;
-            --button-hover: #0069d9;
-            --input-bg: #ffffff;
-            --input-border: #dfe6e9;
-            --error-color: #d63031;
-            --success-color: #00b894;
-            --card-shadow: 0 极抱歉，我似乎被中断了。让我继续完成这个任务。
-
-<create_file>
-<path>frontend/public/register.html</path>
-<content>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - FinTrack</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -94,33 +32,116 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         .register-container {
             background-color: var(--input-bg);
             padding: 2.5rem;
-           极抱歉，我似乎被中断了。让我继续完成这个任务。
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem;
+        }
 
-<create_file>
-<path>frontend/public/register.html</path>
-<content>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale极抱歉，我似乎被中断了。让我继续完成这个任务。
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-<create_file>
-<path>frontend/public/register.html</path>
-<content>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - FinTrack</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+        .logo h1 {
+            color: var(--button-bg);
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .logo p {
+            color: var(--text-color);
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-color);
+            opacity: 0.5;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: var(--transition);
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--button-bg);
+            box-shadow: 0 0 0 2px rgba(9, 132, 227, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.3);
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.875rem;
             margin-top: 0.5rem;
             display: none;
         }
@@ -159,174 +180,140 @@
     </style>
 </head>
 <body>
-    <div class="register-container">
+    <div class="register-container" role="main">
         <div class="logo">
             <h1>FinTrack</h1>
             <p>Your Personal Finance Manager</p>
         </div>
-        <h2>Create Account</h2>
+        <h2>Create an Account</h2>
         <form id="registerForm">
             <div class="form-group">
-                <i class="fas fa-user"></i>
-                <input type="text" id="name" placeholder="Full Name" required>
-                <div class="error-message" id="nameError"></div>
+                <label for="username">Username</label>
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                    aria-required="true"
+                    aria-describedby="usernameError"
+                >
+                <div class="error-message" id="usernameError" role="alert"></div>
             </div>
             <div class="form-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" id="email" placeholder="Email" required>
-                <div class="error-message" id="emailError"></div>
+                <label for="email">Email Address</label>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    aria-required="true"
+                    aria-describedby="emailError"
+                >
+                <div class="error-message" id="emailError" role="alert"></div>
             </div>
             <div class="form-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" placeholder="Password" required>
-                <div class="error-message" id="passwordError"></div>
+                <label for="password">Password</label>
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                    aria-required="true"
+                    aria-describedby="passwordError"
+                    minlength="6"
+                >
+                <div class="error-message" id="passwordError" role="alert"></div>
             </div>
-            <div class="form-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-                <div class="error-message" id="confirmPasswordError"></div>
-            </div>
-            <button type="submit">Register</button>
+            <button type="submit" aria-label="Register">Register</button>
         </form>
         <div class="links">
-            Already have an account? <a href="login.html">Login</a>
+            Already have an account? <a href="login.html" aria-label="Login to your account">Login</a>
         </div>
     </div>
 
     <script>
         const form = document.getElementById('registerForm');
-        const nameInput = document.getElementById('name');
+        const usernameInput = document.getElementById('username');
         const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
-        const confirmPasswordInput = document.getElementById('confirmPassword');
-        const nameError = document.getElementById('nameError');
+        const usernameError = document.getElementById('usernameError');
         const emailError = document.getElementById('emailError');
         const passwordError = document.getElementById('passwordError');
-        const confirmPasswordError = document.getElementById('confirmPasswordError');
-
-        function validateEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // Reset error messages
-            nameError.style.display = 'none';
+            usernameError.style.display = 'none';
             emailError.style.display = 'none';
             passwordError.style.display = 'none';
-            confirmPasswordError.style.display = 'none';
+            usernameInput.removeAttribute('aria-invalid');
+            emailInput.removeAttribute('aria-invalid');
+            passwordInput.removeAttribute('aria-invalid');
             
-            const name = nameInput.value.trim();
+            const username = usernameInput.value.trim();
             const email = emailInput.value.trim();
             const password = passwordInput.value.trim();
-            const confirmPassword = confirmPasswordInput.value.trim();
             
-            if (name.length < 2) {
-                nameError.textContent = 'Name must be at least 2 characters';
-                nameError.style.display = 'block';
+            // Simple validation
+            if (username.length < 3) {
+                usernameError.textContent = 'Username must be at least 3 characters';
+                usernameError.style.display = 'block';
+                usernameInput.setAttribute('aria-invalid', 'true');
                 return;
             }
-
+            
             if (!validateEmail(email)) {
                 emailError.textContent = 'Please enter a valid email address';
                 emailError.style.display = 'block';
+                emailInput.setAttribute('aria-invalid', 'true');
                 return;
             }
-
+            
             if (password.length < 6) {
                 passwordError.textContent = 'Password must be at least 6 characters';
                 passwordError.style.display = 'block';
+                passwordInput.setAttribute('aria-invalid', 'true');
                 return;
             }
-
-            if (password !== confirmPassword) {
-                confirmPasswordError.textContent = 'Passwords do not match';
-                confirmPasswordError.style.display = 'block';
-                return;
-            }
-
+            
+            // Simulate API call
             try {
-                // Show loading state
-                const submitButton = form.querySelector('button[type="submit"]');
-                submitButton.disabled = true;
-                submitButton.textContent = 'Creating Account...';
-                
                 const response = await fetch('/api/auth/register', {
->>>>>>> bf4910498fcec98156456a57039d985c9b16fbf6
-=======
-                const response = await fetch('/api/auth/register', {
-=======
-                console.log('Sending registration request to:', '/api/auth/register');
-                const response = await fetch('/api/auth/register', {
-=======
-                const response = await fetch('/api/auth/register', {
-=======
-                const response = await fetch('/api/auth/register', {
->>>>>>> bf4910498fcec98156456a57039d985c9b16fbf6
-=======
-                const response = await fetch('/api/auth/register', {
-=======
-                console.log('Sending registration request to:', '/api/auth/register');
-                const response = await fetch('/api/auth/register', {
-=======
-                const response = await fetch('/api/auth/register', {
->>>>>>> bf4910498fcec98156456a57039d985c9b16fbf6
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ name, email, password })
+                    body: JSON.stringify({ username, email, password })
                 });
-                
+
                 const data = await response.json();
                 
                 if (!response.ok) {
-                    throw new Error(data.error || 'Registration failed');
+                    throw new Error(data.message || 'Registration failed');
                 }
                 
-                // Store user data and token
-                localStorage.setItem('token', data.token);
-                localStorage.setItem('user', JSON.stringify(data.user));
+                // Show success message
+                alert('Registration successful! Redirecting to login...');
+                window.location.href = 'login.html';
                 
-                // Show success message and redirect
-                submitButton.style.backgroundColor = 'var(--success-color)';
-                submitButton.textContent = 'Account Created! Redirecting...';
-                
-                setTimeout(() => {
-                    window.location.href = '/mainpage.html';
-                }, 1500);
             } catch (error) {
                 console.error('Registration error:', error);
-                const errorMessage = error.message || 'Registration failed';
-                
-                // Show error message
-                const submitButton = form.querySelector('button[type="submit"]');
-                submitButton.disabled = false;
-                submitButton.textContent = 'Register';
-                
-                // Display error in the name error div since it's at the top
-                nameError.textContent = errorMessage;
-                nameError.style.display = 'block';
+                emailError.textContent = error.message || 'Registration failed. Please try again.';
+                emailError.style.display = 'block';
+                emailInput.setAttribute('aria-invalid', 'true');
             }
         });
 
-        // Clear error messages on input
-        nameInput.addEventListener('input', () => {
-            nameError.style.display = 'none';
-        });
-
-        emailInput.addEventListener('input', () => {
-            emailError.style.display = 'none';
-        });
-
-        passwordInput.addEventListener('input', () => {
-            passwordError.style.display = 'none';
-        });
-
-        confirmPasswordInput.addEventListener('input', () => {
-            confirmPasswordError.style.display = 'none';
-        });
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
     </script>
 </body>
-</html> 
+</html>
