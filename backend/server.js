@@ -13,17 +13,17 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // Import models and database connection
-const { connectDB } = require('./db');
+const { connectDB } = require('./config/db');
 const User = require('./models/User');
 const Transaction = require('./models/Transaction');
 const SavingsGoal = require('./models/SavingsGoal');
-const Budget = require('./models/Budget');
+const ExpensesLimit = require('./models/ExpensesLimit');
 
 // Import routes
 const authRoutes = require('./routes/auth');
-const transactionRoutes = require('./routes/transaction');
-const budgetRoutes = require('./routes/budget');
-const savingsRoutes = require('./routes/savings');
+const transactionRoutes = require('./routes/transactions');
+const budgetRoutes = require('./routes/expenses-limits');
+const savingsRoutes = require('./routes/savings-goals');
 
 const app = express();
 
