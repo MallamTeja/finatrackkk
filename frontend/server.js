@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Handle all routes by serving the appropriate HTML file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'mainpage.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Updated to index.html
 });
 
 app.get('/login', (req, res) => {
@@ -27,4 +27,4 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Frontend server running on port ${PORT}`);
     console.log(`Access the application at: http://localhost:${PORT}`);
-}); 
+});

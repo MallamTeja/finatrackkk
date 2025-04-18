@@ -94,16 +94,17 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// @route   GET api/users/me
-// @desc    Get current user data
-// @access  Private
-router.get('/me', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        // Get user from JWT
-        const user = await User.findById(req.user.id).select('-password');
+        // Get user ID from token
+        const userId = req.user.id;
+
+        // Find user by ID
+        const user = await User.findById(userId).select('-password'); // Exclude password from response
         if (!user) {
             return res.status(404).json({ msg: 'User not found' });
         }
+
         res.json(user);
     } catch (err) {
         console.error(err.message);

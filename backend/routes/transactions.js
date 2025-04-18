@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Transaction = require('../models/Transaction');
-const User = require('../models/User');
 const auth = require('../middleware/auth');
 
 // @route   GET api/transactions
@@ -9,12 +8,11 @@ const auth = require('../middleware/auth');
 // @access  Private
 router.get('/', auth, async (req, res) => {
     try {
-        const transactions = await Transaction.find({ user: req.user._id })
-            .sort({ date: -1 });
+        const transactions = await Transaction.find({ user: req.user.id }).sort({ date: -1 });
         res.json(transactions);
-    } catch (error) {
-        console.error('Error getting transactions:', error);
-        res.status(500).json({ error: 'Failed to get transactions' });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
     }
 });
 
@@ -23,88 +21,22 @@ router.get('/', auth, async (req, res) => {
 // @access  Private
 router.post('/', auth, async (req, res) => {
     try {
-        const { type, category, amount, description, date } = req.body;
-        
-        if (!type || !category || !amount) {
-            return res.status(400).json({ error: 'Type, category and amount are required' });
-        }
-        
-        if (type !== 'income' && type !== 'expense') {
-            return res.status(400).json({ error: 'Invalid transaction type' });
-        }
-        
-        if (isNaN(amount) || amount <= 0) {
-            return res.status(400).json({ error: 'Invalid amount' });
-        }
+        const { description, amount, type, category, date } = req.body;
 
-        const transaction = new Transaction({
-            user: req.user._id,
+        const newTransaction = new Transaction({
+            description,
+            amount,
             type,
             category,
-            amount,
-            description: description || '',
-            date: date ? new Date(date) : new Date()
+            date,
+            user: req.user.id
         });
 
-        await transaction.save();
-        
-        // Update user's balance
-        if (type === 'income') {
-            req.user.balance += amount;
-        } else {
-            req.user.balance -= amount;
-        }
-        await req.user.save();
-
-        res.status(201).json(transaction);
-    } catch (error) {
-        console.error('Error adding transaction:', error);
-        res.status(500).json({ error: 'Failed to add transaction' });
-    }
-});
-
-// @route   PATCH api/transactions/:id
-// @desc    Update a transaction
-// @access  Private
-router.patch('/:id', auth, async (req, res) => {
-    try {
-        const updates = Object.keys(req.body);
-        const allowedUpdates = ['description', 'amount', 'category', 'type', 'date'];
-        const isValidOperation = updates.every(update => allowedUpdates.includes(update));
-
-        if (!isValidOperation) {
-            return res.status(400).json({ error: 'Invalid updates!' });
-        }
-
-        const transaction = await Transaction.findOne({
-            _id: req.params.id,
-            user: req.user._id
-        });
-
-        if (!transaction) {
-            return res.status(404).json({ error: 'Transaction not found' });
-        }
-
-        // Calculate balance difference if amount is being updated
-        if (updates.includes('amount')) {
-            const oldAmount = transaction.amount;
-            const newAmount = req.body.amount;
-            const difference = newAmount - oldAmount;
-            
-            if (transaction.type === 'income') {
-                req.user.balance += difference;
-            } else {
-                req.user.balance -= difference;
-            }
-            await req.user.save();
-        }
-
-        updates.forEach(update => transaction[update] = req.body[update]);
-        await transaction.save();
+        const transaction = await newTransaction.save();
         res.json(transaction);
-    } catch (error) {
-        console.error('Error updating transaction:', error);
-        res.status(400).json({ error: error.message });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
     }
 });
 
@@ -113,27 +45,59 @@ router.patch('/:id', auth, async (req, res) => {
 // @access  Private
 router.delete('/:id', auth, async (req, res) => {
     try {
-        const transaction = await Transaction.findOneAndDelete({
-            _id: req.params.id,
-            user: req.user._id
-        });
+        const transaction = await Transaction.findById(req.params.id);
 
         if (!transaction) {
-            return res.status(404).json({ error: 'Transaction not found' });
+            return res.status(404).json({ msg: 'Transaction not found' });
         }
 
-        // Update user's balance
-        if (transaction.type === 'income') {
-            req.user.balance -= transaction.amount;
-        } else {
-            req.user.balance += transaction.amount;
+        // Make sure user owns transaction
+        if (transaction.user.toString() !== req.user.id) {
+            return res.status(401).json({ msg: 'Not authorized' });
         }
-        await req.user.save();
 
+        await transaction.remove();
+        res.json({ msg: 'Transaction removed' });
+    } catch (err) {
+        console.error(err.message);
+        if (err.kind === 'ObjectId') {
+            return res.status(404).json({ msg: 'Transaction not found' });
+        }
+        res.status(500).send('Server error');
+    }
+});
+
+// @route   PUT api/transactions/:id
+// @desc    Update a transaction
+// @access  Private
+router.put('/:id', auth, async (req, res) => {
+    try {
+        const { description, amount, type, category, date } = req.body;
+        const transaction = await Transaction.findById(req.params.id);
+
+        if (!transaction) {
+            return res.status(404).json({ msg: 'Transaction not found' });
+        }
+
+        // Make sure user owns transaction
+        if (transaction.user.toString() !== req.user.id) {
+            return res.status(401).json({ msg: 'Not authorized' });
+        }
+
+        transaction.description = description || transaction.description;
+        transaction.amount = amount || transaction.amount;
+        transaction.type = type || transaction.type;
+        transaction.category = category || transaction.category;
+        transaction.date = date || transaction.date;
+
+        await transaction.save();
         res.json(transaction);
-    } catch (error) {
-        console.error('Error deleting transaction:', error);
-        res.status(500).json({ error: error.message });
+    } catch (err) {
+        console.error(err.message);
+        if (err.kind === 'ObjectId') {
+            return res.status(404).json({ msg: 'Transaction not found' });
+        }
+        res.status(500).send('Server error');
     }
 });
 

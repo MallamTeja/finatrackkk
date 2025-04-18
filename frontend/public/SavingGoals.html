@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FinTrack - Dashboard</title>
+  <title>FinTrack</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Chart.js CDN for visualizations -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -253,7 +253,7 @@
   <div class="flex-1 flex flex-col">
     <!-- Header from pagelayout.html -->
     <div class="flex items-center px-8 py-6 shadow-md sticky top-0 z-50 bg-opacity-90 backdrop-blur-md">
-      <h1 class="text-4xl font-bold text-blue-500 flex-1">Dashboard</h1>
+      <h1 class="text-4xl font-bold text-blue-500 flex-1"> Add Transactions </h1>
       <div class="flex items-center gap-2">
         <button id="themeToggle" class="p-2 rounded-full border-2 border-gray-700 dark:border-gray-300 transition hover:scale-105">
           <svg id="themeIcon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -287,65 +287,8 @@
     <!-- Dashboard Content -->
     <main class="p-6 md:p-10 space-y-10">
       
-      <!-- Cards -->
-      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-transform duration-300 ease-in-out">
-          <div class="card p-6 fade-in">
-            <div class="flex items-center gap-3">
-              <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
-              </svg>
-              <h2 class="text-3xl font-bold">Current Balance</h2>
-            </div>
-            <p class="text-3xl font-extrabold mt-3">₹0</p>
-            <p class="text-base text-blue-500 mt-2">+1.2% from last week</p>
-          </div>
-        <div class="card income p-6 fade-in">
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <h2 class="text-3xl font-bold">Income</h2>
-          </div>
-          <p class="text-3xl font-extrabold mt-3">₹0</p>
-          <p class="text-base text-green-500 mt-2">+2.5% from last month</p>
-        </div>
-        <div class="card p-6 fade-in">
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
-            <h2 class="text-3xl font-bold">Expenses</h2>
-          </div>
-          <p class="text-3xl font-extrabold mt-3">₹0</p>
-          <p class="text-base text-red-500 mt-2">-3.8% from last week</p>
-        </div>
-        <div class="card p-6 fade-in">
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z"/>
-            </svg>
-            <h2 class="text-3xl font-bold">Saving Rate</h2>
-          </div>
-          <p class="text-3xl font-extrabold mt-3">₹0</p>
-          <p class="text-base text-purple-500 mt-2">+5.1% from last month</p>
-        </div>
-      </section>
-
-      <!-- Charts Section -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Current Balance Breakdown Chart -->
-        <div class="card p-6 fade-in">
-          <h2 class="text-xl font-semibold mb-4">Current Balance Over This Month</h2>
-          <canvas id="balanceChart" class="fade-in" height="120"></canvas>
-        </div>
-        
-        <!-- Spending by Category Chart -->
-        <div class="card p-6 fade-in">
-          <h2 class="text-xl font-semibold mb-4">Spending by Category</h2>
-          <canvas id="spendingChart" class="fade-in" height="120"></canvas>
-        </div>
-      </section>
-
+   
+  
       <!-- Recent Transactions Section -->
       <!-- Removed as per user request -->
     </main>
@@ -388,61 +331,267 @@
       updateThemeIcon();
     });
 
-    // Current Balance Breakdown Chart (Doughnut)
-    const balanceCtx = document.getElementById('balanceChart').getContext('2d');
-    new Chart(balanceCtx, {
-      type: 'line',
-      data: {
-        labels: ['1', '5', '10', '15', '20', '25', '30'],
-        datasets: [{
-          label: 'Current Balance (₹)',
-          data: [10000, 12000, 15000, 18000, 22000, 27000, 32000],
-          fill: true,
-          borderColor: '#10b981',
-          backgroundColor: 'rgba(16, 185, 129, 0.2)',
-          tension: 0.3,
-          pointRadius: 5,
-          pointHoverRadius: 7,
-          pointBackgroundColor: '#10b981',
-          pointHoverBackgroundColor: '#059669'
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: true,
-            position: 'top'
-          },
-          tooltip: {
-            mode: 'index',
-            intersect: false,
-          }
-        },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Date (This Month)'
-            }
-          },
-          y: {
-            beginAtZero: false,
-            title: {
-              display: true,
-              text: 'Balance (₹)'
-            }
-          }
-        },
-        interaction: {
-          mode: 'nearest',
-          axis: 'x',
-          intersect: false
-        }
-      }
+
+
+    <!-- Dashboard Content -->
+    <main class="p-6 md:p-10 space-y-10">
+      
+      <!-- Add New Goal Button -->
+      <div class="flex justify-end mb-6">
+        <button id="addGoalBtn" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+          Add New Saving Goal
+        </button>
+      </div>
+
+      <!-- Add Goal Modal -->
+      <div id="goalModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 w-full max-w-md">
+          <h2 class="text-xl font-semibold mb-4">Add New Saving Goal</h2>
+          
+          <form id="goalForm" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Goal Name</label>
+              <input type="text" name="goalName" placeholder="Vacation to Kerala" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium mb-1">Target Amount (₹)</label>
+              <input type="number" name="targetAmount" placeholder="50000" min="1" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium mb-1">Initial Saved Amount (₹)</label>
+              <input type="number" name="savedAmount" placeholder="5000" min="0" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium mb-1">Target Completion Date</label>
+              <input type="date" name="targetDate" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
+            </div>
+            
+            <div class="flex justify-end gap-2">
+              <button type="button" id="cancelGoalBtn" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+                Cancel
+              </button>
+              <button type="submit" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md">
+                Create Goal
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Savings Goals Section -->
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Goal Card 1 -->
+        <div class="card p-6 fade-in">
+          <div class="flex justify-between items-start">
+            <h2 class="text-xl font-semibold text-blue-500">New Laptop</h2>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">On Track</span>
+              <button class="p-1 text-gray-500 hover:text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+              </button>
+              <button class="p-1 text-gray-500 hover:text-red-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-500">Saved:</span>
+              <span class="font-medium">₹15,000 / ₹50,000</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1 dark:bg-gray-700">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 30%"></div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex justify-between text-sm">
+            <div>
+              <span class="text-gray-500">Target Date:</span>
+              <span class="ml-2">2023-12-15</span>
+            </div>
+            <span class="text-blue-500 font-medium">30%</span>
+          </div>
+
+          <button class="mt-4 w-full py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors">
+            Add Fund
+          </button>
+        </div>
+
+        <!-- Goal Card 2 -->
+        <div class="card p-6 fade-in">
+          <div class="flex justify-between items-start">
+            <h2 class="text-xl font-semibold text-purple-500">Vacation</h2>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">Behind Schedule</span>
+              <button class="p-1 text-gray-500 hover:text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+              </button>
+              <button class="p-1 text-gray-500 hover:text-red-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-500">Saved:</span>
+              <span class="font-medium">₹25,000 / ₹1,00,000</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1 dark:bg-gray-700">
+              <div class="bg-purple-500 h-2.5 rounded-full" style="width: 25%"></div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex justify-between text-sm">
+            <div>
+              <span class="text-gray-500">Target Date:</span>
+              <span class="ml-2">2023-11-30</span>
+            </div>
+            <span class="text-purple-500 font-medium">25%</span>
+          </div>
+
+          <button class="mt-4 w-full py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-md transition-colors">
+            Add Fund
+          </button>
+        </div>
+
+        <!-- Goal Card 3 -->
+        <div class="card p-6 fade-in">
+          <div class="flex justify-between items-start">
+            <h2 class="text-xl font-semibold text-green-500">Emergency Fund</h2>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Completed</span>
+              <button class="p-1 text-gray-500 hover:text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+              </button>
+              <button class="p-1 text-gray-500 hover:text-red-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-500">Saved:</span>
+              <span class="font-medium">₹50,000 / ₹50,000</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1 dark:bg-gray-700">
+              <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex justify-between text-sm">
+            <div>
+              <span class="text-gray-500">Target Date:</span>
+              <span class="ml-2">2023-10-15</span>
+            </div>
+            <span class="text-green-500 font-medium">100%</span>
+          </div>
+
+          <button class="mt-4 w-full py-2 bg-green-500 hover:bg-green-600 text-white rounded-md transition-colors">
+            Add Fund
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Define variables
+    const htmlElement = document.documentElement;
+    const themeIcon = document.getElementById('themeIcon');
+    const themeToggle = document.getElementById('themeToggle');
+    const profileButton = document.getElementById('profileButton');
+    const profileDropdown = document.getElementById('profileDropdown');
+    const addGoalBtn = document.getElementById('addGoalBtn');
+    const goalModal = document.getElementById('goalModal');
+    const cancelGoalBtn = document.getElementById('cancelGoalBtn');
+    const goalForm = document.getElementById('goalForm');
+
+    // Goal Modal Functionality
+    addGoalBtn.addEventListener('click', () => {
+      goalModal.classList.remove('hidden');
     });
 
-    // Spending by Category Chart (Bar)
+    cancelGoalBtn.addEventListener('click', () => {
+      goalModal.classList.add('hidden');
+    });
+
+    goalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(goalForm);
+      const targetAmount = parseFloat(formData.get('targetAmount'));
+      const savedAmount = parseFloat(formData.get('savedAmount'));
+      const targetDate = new Date(formData.get('targetDate'));
+      
+      // Validate saved amount
+      if (savedAmount > targetAmount) {
+        alert('Saved amount cannot be greater than target amount');
+        return;
+      }
+      
+      // Validate target date
+      if (targetDate < new Date()) {
+        alert('Target date must be in the future');
+        return;
+      }
+      
+      // Create new goal card (implementation would go here)
+      alert('New goal created successfully!');
+      goalModal.classList.add('hidden');
+      goalForm.reset();
+    });
+
+    // Theme toggle functionality
+    function updateThemeIcon() {
+      const isDark = htmlElement.getAttribute("data-theme") === "dark";
+      themeIcon.innerHTML = isDark ? 
+        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>' :
+        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>';
+    }
+
+    // Toggle profile dropdown on click
+    profileButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = profileButton.getAttribute('aria-expanded') === 'true';
+      profileDropdown.classList.toggle('hidden', isExpanded);
+      profileButton.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+      profileDropdown.classList.add('hidden');
+      profileButton.setAttribute('aria-expanded', 'false');
+    });
+
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+      const current = htmlElement.getAttribute("data-theme");
+      htmlElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+      updateThemeIcon();
+    });
+
+    // Spending by Category Chart
     const spendingCtx = document.getElementById('spendingChart').getContext('2d');
     new Chart(spendingCtx, {
       type: 'bar',
@@ -478,59 +627,8 @@
       return colors[category] || colors.other;
     }
 
-    // Sample recent transactions data
-    const recentTransactions = [
-      { date: '2024-06-01', description: 'Grocery Shopping', category: 'food', amount: -1500 },
-      { date: '2024-06-02', description: 'Salary', category: 'income', amount: 50000 },
-      { date: '2024-06-03', description: 'Electricity Bill', category: 'bills', amount: -3000 },
-      { date: '2024-06-04', description: 'Movie Tickets', category: 'entertainment', amount: -800 },
-      { date: '2024-06-05', description: 'Freelance Project', category: 'income', amount: 12000 }
-    ];
-
-    // Function to render recent transactions in the table
-    function renderRecentTransactions() {
-      const tbody = document.getElementById('transactionsTableBody');
-      if (tbody) {
-        tbody.innerHTML = '';
-        recentTransactions.forEach(tx => {
-          const tr = document.createElement('tr');
-          tr.className = 'border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700';
-
-          const dateTd = document.createElement('td');
-          dateTd.className = 'py-3 px-6 text-left whitespace-nowrap';
-          dateTd.textContent = tx.date;
-          tr.appendChild(dateTd);
-
-          const descTd = document.createElement('td');
-          descTd.className = 'py-3 px-6 text-left';
-          descTd.textContent = tx.description;
-          tr.appendChild(descTd);
-
-          const categoryTd = document.createElement('td');
-          categoryTd.className = 'py-3 px-6 text-left';
-          categoryTd.textContent = tx.category.charAt(0).toUpperCase() + tx.category.slice(1);
-          tr.appendChild(categoryTd);
-
-          const amountTd = document.createElement('td');
-          amountTd.className = 'py-3 px-6 text-right font-semibold';
-          amountTd.textContent = (tx.amount < 0 ? '-' : '+') + '₹' + Math.abs(tx.amount);
-          amountTd.style.color = tx.amount < 0 ? '#ef4444' : '#10b981'; // red for negative, green for positive
-          tr.appendChild(amountTd);
-
-          tbody.appendChild(tr);
-        });
-      }
-    }
-
     // Initialize theme icon
     updateThemeIcon();
-    
-    // Call renderRecentTransactions only if the table exists
-    if (document.getElementById('transactionsTableBody')) {
-      renderRecentTransactions();
-    }
   </script>
 </body>
 </html>
-
-
